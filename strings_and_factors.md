@@ -162,3 +162,14 @@ data_marj =
   mutate(percent = as.numeric(percent)) %>% 
   filter(!(State %in% c("Total U.S.", "Northease", "Midwest", "South", "West")))
 ```
+
+``` r
+data_marj %>% 
+  filter(age == "12-17") %>% 
+  mutate(State = fct_reorder(State, percent)) %>% 
+  ggplot(aes(State, y = percent, color = year)) +
+  geom_point() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+```
+
+![](strings_and_factors_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
