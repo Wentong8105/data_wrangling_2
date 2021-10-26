@@ -125,3 +125,15 @@ brfss_2010 =
     ## 
     ## ℹ Use `spec()` to retrieve the full column specification for this data.
     ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+## Some data arenot so nice
+
+Lets look at Pokemon ..
+
+``` r
+pokemon_data = 
+  GET("https://pokeapi.co/api/v2/pokemon/1") %>% 
+  content()  ## this data is extremly complicated
+```
+
+## Closing thoughts
